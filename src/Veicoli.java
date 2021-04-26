@@ -1,5 +1,8 @@
-abstract public class Veicoli {
+import java.io.Serializable;
+
+abstract public class Veicoli implements Serializable , Comparable<Veicoli>{
     //Attributi
+    private static final long serialVersionUID = 1L;
     private String targa;
     private String numeroMatricola;
     private String marca;
@@ -73,5 +76,10 @@ abstract public class Veicoli {
     }
     public void setCapacitaSerbatoio(double capacitaSerbatoio) {
         this.capacitaSerbatoio = capacitaSerbatoio;
+    }
+
+    @Override
+    public int compareTo(Veicoli v){
+        return this.targa.compareTo(v.getTarga());
     }
 }
