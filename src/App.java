@@ -12,12 +12,16 @@ public class App {
         System.out.println("\n"+"Costo Noleggio Vettura:" + ((Vetture) vettura).costoAutonoleggio(3, 411, 34));
         System.out.println("\n"+"Costo Noleggio furgone:" + ((Furgoni) furgone).costoAutonoleggio(3, 411, 34));
 
-        Gestione g = new Gestione(3);
-        g.addVeicoli(vettura, 0);
-        g.addVeicoli(furgone, 1);
+        Gestione g = new Gestione();
+        g.veicolo.add(0, vettura);
+        g.veicolo.add(1, furgone);
         System.out.println("\n"+"Gestione: \n" + g.toString());
         System.out.println("\n"+"Delete:");
-        g.deleteVeicoli(0);
+        g.veicolo.remove(0);
         System.out.println(g.toString());
+        g.save("dati.bin");
+        Gestione g1 = new Gestione();
+        g1.load("dati.bin");
+        System.out.println("\n"+"Variabile prende valori da FILE BIN: "+"\n"+g1.toString());
     }
 }

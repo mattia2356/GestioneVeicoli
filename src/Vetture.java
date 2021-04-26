@@ -48,7 +48,7 @@ public class Vetture extends Veicoli{
         return s;
     }
 
-    //metodo clone  
+    //metodo clone VEttura
     public Vetture clone()
     {
         Vetture a = new Vetture(super.getModello(), super.getNumeroMatricola(), super.getMarca(), super.getModello(), super.getCilindrata(), super.getAnnoAcquisto(), super.getCapacitaSerbatoio(), getNumeroPosti());
